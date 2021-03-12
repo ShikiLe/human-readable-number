@@ -6,38 +6,38 @@ module.exports = function toReadable (number) {
     const lastNum = dec % 10;
     const hundred = Math.floor(number / 100);
     if (number < 20) {
-    return a[number];
-}
-if (dec === 0) {
-    return a[hundred] + ' hundred';
-}
-if (dec === 0 && lastNum < 10) {
-    return a[hundred] + ' hundred ' + a[lastNum];
-}
-if (lastNum === 0) {
-    return b[decim];
-}
+        return a[number];
+    }
+    if (dec === 0) {
+        return a[hundred] + ' hundred';
+    }
+    if (dec === 0 && lastNum < 10) {
+        return a[hundred] + ' hundred ' + a[lastNum];
+    }
     if (number > 19 && number < 100) {
-        if (dec === 0) {
+        if (lastNum === 0) {
             return b[decim];
         }
-    return b[decim] + ' ' + a[lastNum];
-} 
-    if (number > 99 && number < 1000) {
-        if (decim > 0 && decim < 10 && lastNum === 0) {
-            return a[hundred] + ' hundred ' + b[decim];
-        }
-        if (decim === 0 && lastNum > 0 && lastNum < 10) {
-            return a[hundred] + ' hundred ' + a[lastNum];
-        }
-        if (dec < 20 && dec > 9) {
-            return a[hundred] + ' hundred ' + a[dec];
-          }
-          if (lastNum === 0 && decim > 19) {
-         return a[hundred] + ' hundred ' + b[decim];
-         } else {
-          return a[hundred] + ' hundred ' + b[decim] + ' ' + a[lastNum];
-        }
-} 
+            if (dec === 0) {
+                return b[decim];
+            }
+        return b[decim] + ' ' + a[lastNum];
+    } 
+    
+     if (number > 99 && number < 1000) {
+          if (dec < 20 && dec > 9) {
+           return a[hundred] + ' hundred ' + a[dec];
+         }
+         if (decim > 0 && decim < 10 && lastNum === 0) {
+             return a[hundred] + ' hundred ' + b[decim];
+         }
+         if (decim === 0 && lastNum > 0 && lastNum < 10) {
+             return a[hundred] + ' hundred ' + a[lastNum];
+         }
+         if (lastNum === 0 && decim > 19) {
+        return a[hundred] + ' hundred ' + b[decim];
+        } else {
+         return a[hundred] + ' hundred ' + b[decim] + ' ' + a[lastNum];}
+     } 
 return 'zero';
 }

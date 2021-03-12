@@ -5,6 +5,9 @@ module.exports = function toReadable (number) {
     const dec = number % 100;
     const lastNum = dec % 10;
     const hundred = Math.floor(number / 100);
+    if (number === 0) {
+        return 'zero';
+    }
     if (number < 20) {
         return a[number];
     }
@@ -39,5 +42,4 @@ module.exports = function toReadable (number) {
         } else {
          return a[hundred] + ' hundred ' + b[decim] + ' ' + a[lastNum];}
      } 
-return 'zero';
 }

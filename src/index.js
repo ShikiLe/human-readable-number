@@ -18,6 +18,9 @@ if (lastNum === 0) {
     return b[decim] + ' ' + a[lastNum];
 } 
     if (number > 99 && number < 1000) {
+        if (lastNum === 0) {
+            return a[hundred] + ' hundred ' + b[decim];
+        }
         if (dec < 20 && dec > 12) {
             return a[hundred] + ' hundred ' + a[dec];
            } else {

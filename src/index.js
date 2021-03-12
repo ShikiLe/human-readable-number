@@ -24,8 +24,9 @@ if (lastNum === 0) {
           if (lastNum === 0 && decim > 19) {
          return a[hundred] + ' hundred ' + b[decim];
          } else {
-          result += a[hundred] + ' hundred ' + b[decim] + ' ' + a[lastNum];}
- else {
+          result += a[hundred] + ' hundred ' + b[decim] + ' ' + a[lastNum];
+        }
+} else {
     return 'zero';
  } 
 }

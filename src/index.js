@@ -8,12 +8,23 @@ module.exports = function toReadable (number) {
     if (number < 20) {
     return a[number];
 }
+if (dec === 0) {
+    return a[hundred] + ' hundred';
+}
+if (lastNum === 0) {
+    return b[decim];
+}
     if (number > 19 && number < 100) {
     return b[decim] + ' ' + a[lastNum];
 } 
     if (number > 99 && number < 1000) {
-     return a[hundred] + ' hundred ' + b[decim] + ' ' + a[lastNum];
- }  else {
+        if (dec < 20 && dec > 12) {
+            return a[hundred] + ' hundred ' + a[dec];
+           } else {
+            return a[hundred] + ' hundred ' + b[decim] + ' ' + a[lastNum];
+        }
+        }  
+ else {
     return 'zero';
  } 
 }

@@ -18,13 +18,16 @@ if (lastNum === 0) {
     return b[decim] + ' ' + a[lastNum];
 } 
     if (number > 99 && number < 1000) {
+        if (decim === 0 && lastNum > 0 && lastNum < 10) {
+            return a[hundred] + ' hundred ' + a[lastNum];
+        }
         if (dec < 20 && dec > 9) {
             return a[hundred] + ' hundred ' + a[dec];
           }
           if (lastNum === 0 && decim > 19) {
          return a[hundred] + ' hundred ' + b[decim];
          } else {
-          result += a[hundred] + ' hundred ' + b[decim] + ' ' + a[lastNum];
+          return a[hundred] + ' hundred ' + b[decim] + ' ' + a[lastNum];
         }
 } else {
     return 'zero';
